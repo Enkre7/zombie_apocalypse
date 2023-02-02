@@ -1,0 +1,75 @@
+{
+    "questions": [
+        {
+            "question": "Vous êtes dans un magasin d'alimentation rempli de provisions, mais vous entendez des zombies qui approchent rapidement. Que faites-vous ?",
+            "choice1": "Vous restez et vous battez contre les zombies pour défendre les provisions.",
+            "choice2": "Vous partez en emportant autant de provisions que possible.",
+            "choice3": "Vous cachiez vous dans le magasin jusqu'à ce que les zombies soient partis.",
+            "choice4": "Vous partez sans les provisions, en vous concentrant sur votre sécurité."  
+        },
+        {
+            "question": "Vous rencontrez un groupe de survivants qui ont l'air amicaux, mais vous remarquez qu'ils ont des provisions insuffisantes pour tout le monde. Que faites-vous ?",
+            "choice1": "Vous leur offrez une partie de vos provisions pour les aider.",
+            "choice2": "Vous les mettez en garde sur les dangers de partager les provisions et continuez votre chemin.",
+            "choice3": "Vous les laissez derrière vous sans hésitation pour protéger vos propres provisions.",
+            "choice4": "Vous restez avec eux et travaillez ensemble pour trouver de nouvelles provisions."
+        },
+        {
+            "question": "Vous trouvez un refuge sûr avec des provisions abondantes, mais vous découvrez qu'il y a déjà un survivant là-bas. Que faites-vous ?",
+            "choice1": "Vous approchez avec prudence et établissez une relation de confiance avec le survivant.",
+            "choice2": "Vous partez immédiatement, en laissant le refuge à l'autre survivant.",
+            "choice3": "Vous tuez le survivant pour prendre possession du refuge et des provisions.",
+            "choice4": "Vous partagez le refuge et les provisions avec le survivant."
+        },
+        {
+            "question": "Vous êtes en route pour un refuge sûr, mais vous rencontrez une personne gravement blessée qui a besoin de votre aide. Que faites-vous ?",
+            "choice1": "Vous l'aidez et la prenez avec vous pour la soutenir dans son voyage.",
+            "choice2": "Vous la laissez derrière vous, en vous concentrant sur votre propre survie.",
+            "choice3": "Vous la tuez pour éviter d'attirer les zombies à vous.",
+            "choice4": "Vous l'aidez à trouver un endroit sûr pour qu'elle puisse se soigner."
+          },
+        {
+            "question": "Vous êtes sur le point d'entrer dans un bâtiment qui semble sécurisé, mais vous entendez des bruits de zombies à l'intérieur. Que faites-vous ?",
+            "choice1": "Vous entrez tout de suite, en pensant que vous pourrez vous défendre.",
+            "choice2": "Vous entrez en vous cachant, en espérant pouvoir les éviter.",
+            "choice3": "Vous attendez à l'extérieur, en espérant que les zombies s'en aillent.",
+            "choice4": "Vous hésitez, en vous demandant si vous devez risquer votre vie pour entrer."
+            
+        },
+        {
+            "question": "Vous rencontrez un groupe de survivants qui vous proposent de vous joindre à eux. Que faites-vous ?",
+            "choice1": "Vous acceptez immédiatement, en pensant que la force en nombre est importante.",
+            "choice2": "Vous les observez d'abord, en vous demandant s'ils sont dignes de confiance.",
+            "choice3": "Vous les ignorez, en préférant rester seul.",
+            "choice4": "Vous les menacez, en exigeant qu'ils vous donnent une partie de leurs ressources."
+        },
+        {
+            "question": " Vous tombez sur une arme à feu, mais il n'y a plus de balles. Que faites-vous ?",
+            "choice1": "Vous la laissez là, en pensant qu'elle ne vous sera d'aucune utilité.",
+            "choice2": "Vous la prenez avec vous, en espérant pouvoir trouver des munitions plus tard.",
+            "choice3": "Vous la brisez, en pensant que cela peut dissuader d'autres survivants de vous attaquer.",
+            "choice4": "Vous la brandissez pour effrayer les zombies, en espérant qu'ils vous laissent passer."
+         },
+        {
+            "question": "Vous êtes blessé et ne pouvez plus continuer à marcher. Que faites-vous ?",
+            "choice1": "Vous demandez de l'aide à un passant, en espérant qu'ils soient disposés à vous aider.",
+            "choice2": "Vous vous cachez et attendez que la douleur passe, en espérant que les zombies ne vous trouvent pas.",
+            "choice3": "Vous abandonnez, en acceptant que votre sort est scellé.",
+            "choice4": "Vous tentez de continuer, en refusant de abandonner."
+        },
+        {
+            "question": "Vous rencontrez un survivant armé qui vous demande toutes vos provisions. Que faites-vous ?",
+            "choice1": "Vous leur donnez tout ce qu'ils demandent, en espérant qu'ils vous laissent partir.",
+            "choice2": "Vous les menacez à votre tour, en refusant de les laisser vous voler.",
+            "choice3": "Vous négociez avec eux, en essayant de trouver un compromis.",
+            "choice4": "Vous les ignorez et continuez votre chemin, en pensant que cela n'en vaut pas la peine."
+        },
+         {
+            "question": "Vous tombez sur un survivant blessé qui ne peut plus marcher. Que faites-vous ?",
+            "choice1": "Vous l'emmenez avec vous, en prenant soin de lui à tout moment.",
+            "choice2": "Vous lui donnez de la nourriture et de l'eau, en espérant qu'il puisse se soigner seul.",
+            "choice3": "Vous l'abandonnez, en pensant que c'est plus sûr pour tout le monde.",
+            "choice4": "Vous hésitez, en vous demandant si vous pourrez le protéger et le nourrir."
+        }
+    ]
+}
