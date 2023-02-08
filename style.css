@@ -11,7 +11,6 @@
 
     .card {
         background-color: #343434;
-        box-shadow: 0px 10px 20px white;
     }
 
     .btn:hover {
@@ -27,8 +26,6 @@
     }
 
     .card {
-        border-color: #A4B494;
-        border-radius: 12px;
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     }
     
@@ -42,6 +39,8 @@
 }
 
 .card {
+    border-color: #A4B494;
+    border-radius: 15px;
     width: 100%;
     margin-top: 7px;
     margin-bottom: 7px;
@@ -52,4 +51,10 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+}
+
+.answer {
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
 }
