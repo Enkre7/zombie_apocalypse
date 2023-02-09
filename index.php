@@ -2,19 +2,21 @@
 
 session_start();
 
-# Initialisation variables
+// Initialisation variables
 $answer_count = 0;
 $count = 1;
 $IsAnswered = false;
 
+# Fonction d'affichage des résultats
 function DisplayAnswer($count) {
 
-    # Initialisation variables
+    // Initialisation variables
     $A_answer_count = 0;
     $B_answer_count = 0;
     $C_answer_count = 0;
     $D_answer_count = 0;
 
+    // Compte le nombre de réponses
     foreach ($_POST as $key => $post_data) {
         if ($post_data == 1) {
             $A_answer_count++;
@@ -27,6 +29,7 @@ function DisplayAnswer($count) {
         }
     }
 
+    // Résultat en fonction du nombre de réponses
     if ($A_answer_count >= ceil($count * (51/100))) {
         echo "<br><br><br><br><h2 class='answer'>Vous êtes une personne plutôt coopérative et soucieuse de l'harmonie avec les autres.</h2><br>
         <h2 class='answer'>Vous pouvez également faire preuve de trop de confiance et manquer de jugement.</h2>";
@@ -47,30 +50,16 @@ function DisplayAnswer($count) {
     }
 }
 
-# Parse le fichier JSON
+// Parse le fichier JSON
 if (!(file_exists('./questions.json'))) {
     echo "Can't read file !";
 }
-
 $questions_json = file_get_contents('./questions.json');
 $decoded_json = json_decode($questions_json, true);
 $questions = $decoded_json['questions'];
-
 $questions_count = count($questions);
 
-// $QuestionAnswered = 0;
-// if (isset($_POST['submit'])) {
-//     foreach($questions as $question) {
-//         if (isset($_POST["question_$count"])) {
-//             $QuestionAnswered++;
-//         }
-//     }
-//     echo $QuestionAnswered;
-//     if ($QuestionAnswered == count($questions)) {
-//         $IsAnswered = true;
-//     }
-// }
-
+// Vérifie l'état de la requête POST
 if (!empty($_POST)) {
     $IsAnswered = true;
 }
@@ -95,11 +84,14 @@ if (!empty($_POST)) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
     <div class="container-fluid">
+        <!-- Affichage du titre du site -->
         <div class="jumbotron">
             <h1>Zombie Apocalypse</h1>
             <h2>Quel type de survivant serez-vous ?</h2>
             <h3>Testez votre personnalité en <?php echo $questions_count ?> questions !</h3>
         </div>
+        
+        <!-- Affiche le résultat ou la page des questions en fonction de l'état de la requête POST -->
         <?php if ($IsAnswered == true) {
             DisplayAnswer(count($questions));
         ?>
@@ -108,6 +100,8 @@ if (!empty($_POST)) {
                 <div class="col"></div>
                 <div class="col">
                     <form action="" method="post">
+
+                        <!-- Affiche les cartes de questions en fonction du nombre de questions dans le fichier JSON -->
                         <?php foreach ($questions as $question) { ?>
                             <div class="card">
                                 <div class="card-header">
@@ -138,6 +132,8 @@ if (!empty($_POST)) {
                             <br>
                         <?php $count++;
                         } ?>
+
+                        <!-- Bouton d'envoi de la requête POST -->
                         <div class="nav-buttons">
                             <button type="submit" name="submit" class="btn btn-outline-success validate">Valider</button>
                         </div>

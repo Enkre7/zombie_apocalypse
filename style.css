@@ -1,7 +1,9 @@
+/* Curseur customisé */
 html {
     cursor: url(./src/biohazard.svg), auto;
 }
 
+/* Mode sombre */
 @media(prefers-color-scheme: dark) {
 
     body {
@@ -27,6 +29,7 @@ html {
 
 }
 
+/* Mode clair */
 @media(prefers-color-scheme: light) {
 
     body {
@@ -51,6 +54,7 @@ html {
 
 }
 
+/* Gestion de taille pour site responsive */
 @media (max-width: 830px) {
     .card {
         zoom: 75%;
@@ -63,19 +67,21 @@ html {
     }
 }
 
-.validate {
-    border-radius: 7px;
-    font-size: 60px;
-    border-top: none;
-    border-bottom: none;
-}
-
+/* Carte qui contient les questions/réponses */
 .card {
     border-color: #A4B494;
     border-radius: 15px;
     margin-top: 7px;
     margin-bottom: 7px;
     width: 50rem;
+}
+
+/* Bouton de validation */
+.validate {
+    border-radius: 7px;
+    font-size: 60px;
+    border-top: none;
+    border-bottom: none;
 }
 
 .nav-buttons {
@@ -85,12 +91,14 @@ html {
     height: 100%;
 }
 
+/* Message de réponse */
 .answer {
     text-align: center;
     margin-left: 150px;
     margin-right: 150px;
 }
 
+/* Boutons de réponse */
 .button input[type="radio"] {
     display: none;
 }
