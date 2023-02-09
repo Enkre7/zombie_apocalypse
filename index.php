@@ -6,10 +6,46 @@ session_start();
 $answer_count = 0;
 $count = 1;
 $IsAnswered = false;
-$A_answer_count = 0;
-$B_answer_count = 0;
-$C_answer_count = 0;
-$D_answer_count = 0;
+
+function DisplayAnswer($count) {
+
+    # Initialisation variables
+    $A_answer_count = 0;
+    $B_answer_count = 0;
+    $C_answer_count = 0;
+    $D_answer_count = 0;
+
+    foreach ($_POST as $key => $post_data) {
+        if ($post_data == 1) {
+            $A_answer_count++;
+        } elseif ($post_data == 2) {
+            $B_answer_count++;
+        } elseif ($post_data == 3) {
+            $C_answer_count++;
+        } elseif ($post_data == 4) {
+            $D_answer_count++;
+        }
+    }
+
+    if ($A_answer_count >= ceil($count * (51/100))) {
+        echo "<br><br><br><br><h2 class='answer'>Vous êtes une personne plutôt coopérative et soucieuse de l'harmonie avec les autres.</h2><br>
+        <h2 class='answer'>Vous pouvez également faire preuve de trop de confiance et manquer de jugement.</h2>";
+    }
+    elseif ($B_answer_count >= ceil($count * (51/100))) {
+        echo "<br><br><br><br><h2 class='answer'>Vous êtes quelqu'un de déterminé et courageux.</h2><br>
+        <h2 class='answer'>Cependant, vous pouvez également être une personne agressive et manquer de considération pour les autres.</h2>";
+    }
+    elseif ($C_answer_count >= ceil($count * (51/100))) {
+        echo "<br><br><br><br><h2 class='answer'>Vous êtes quelqu'un de rationnel et pragmatique.</h2><br>
+        <h2 class='answer'>Cependant, vous manquez d'empathie et êtes insensible aux besoins des autres.</h2>";
+    }
+    elseif ($D_answer_count >= ceil($count * (51/100))) {
+        echo "<br><br><br><br><h2 class='answer'>Vous êtes une personne plutôt est hésitante et incertaine.</h2><br>
+        <h2 class='answer'>Cependant, vous êtes également quelqu'un de raisonnable et soucieux de la sécurité de tous.</h2>";
+    } else {
+        echo "<br><br><br><br><h2 class='answer'>Vos réponses sont parfaitement équilibrées, comme toute chose devrait l'être ...</h2>";
+    }
+}
 
 # Parse le fichier JSON
 if (!(file_exists('./questions.json'))) {
@@ -65,33 +101,7 @@ if (!empty($_POST)) {
             <h3>Testez votre personnalité en <?php echo $questions_count ?> questions !</h3>
         </div>
         <?php if ($IsAnswered == true) {
-            foreach ($_POST as $key => $post_data) {
-                if ($post_data == 1) {
-                    $A_answer_count++;
-                } elseif ($post_data == 2) {
-                    $B_answer_count++;
-                } elseif ($post_data == 3) {
-                    $C_answer_count++;
-                } elseif ($post_data == 4) {
-                    $D_answer_count++;
-                }
-            }
-            if ($A_answer_count > $B_answer_count and $A_answer_count > $C_answer_count and $A_answer_count > $D_answer_count) {
-                echo "<h2 class='answer'>Vous êtes une personne plutôt coopérative et soucieuse de l'harmonie avec les autres.</h2><br>
-                <h2 class='answer'>Vous pouvez également faire preuve de trop de confiance et manquer de jugement.</h2>";
-            }
-            if ($B_answer_count > $A_answer_count and $B_answer_count > $C_answer_count and $B_answer_count > $D_answer_count) {
-                echo "<h2 class='answer'>Vous êtes quelqu'un de déterminé et courageux.</h2><br>
-                <h2 class='answer'>Cependant, vous pouvez également être une personne agressive et manquer de considération pour les autres.</h2>";
-            }
-            if ($C_answer_count > $A_answer_count and $C_answer_count > $B_answer_count and $C_answer_count > $D_answer_count) {
-                echo "<h2 class='answer'>Vous êtes quelqu'un de rationnel et pragmatique.</h2><br>
-                <h2 class='answer'>Cependant, vous manquez d'empathie et êtes insensible aux besoins des autres.</h2>";
-            }
-            if ($D_answer_count > $B_answer_count and $D_answer_count > $C_answer_count and $D_answer_count > $A_answer_count) {
-                echo "<h2 class='answer'>Vous êtes une personne plutôt est hésitante et incertaine.</h2><br>
-                <h2 class='answer'>Cependant, vous êtes également quelqu'un de raisonnable et soucieux de la sécurité de tous.</h2>";
-            }
+            DisplayAnswer(count($questions));
         ?>
         <?php } else { ?>
             <div class="row">
@@ -99,30 +109,28 @@ if (!empty($_POST)) {
                 <div class="col">
                     <form action="" method="post">
                         <?php foreach ($questions as $question) { ?>
-                            <div class="question">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">
-                                            <span style="font-weight: bold;"><?php echo $question['question'] ?></span>
-                                        </h3>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <span style="font-weight: bold;"><?php echo $question['question'] ?></span>
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="button">
+                                        <input type="radio" id="radio_<?php echo $count ?>_1" name="question_<?php echo $count ?>" value="1">
+                                        <label for="radio_<?php echo $count ?>_1"><?php echo $question['choice1'] ?></label>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="button">
-                                            <input type="radio" id="radio_<?php echo $count ?>_1" name="question_<?php echo $count ?>" value="1">
-                                            <label  for="radio_<?php echo $count ?>_1"><?php echo $question['choice1'] ?></label>
-                                        </div>
-                                        <div class="button">
-                                            <input type="radio" id="radio_<?php echo $count ?>_2" name="question_<?php echo $count ?>" value="2">
-                                            <label for="radio_<?php echo $count ?>_2"><?php echo $question['choice2'] ?></label>
-                                        </div>
-                                        <div class="button">
-                                            <input type="radio" id="radio_<?php echo $count ?>_3" name="question_<?php echo $count ?>" value="3">
-                                            <label  for="radio_<?php echo $count ?>_3"><?php echo $question['choice3'] ?></label>
-                                        </div>
-                                        <div class="button">
-                                            <input type="radio" id="radio_<?php echo $count ?>_4" name="question_<?php echo $count ?>" value="4">
-                                            <label  for="radio_<?php echo $count ?>_4"><?php echo $question['choice4'] ?></label>
-                                        </div>
+                                    <div class="button">
+                                        <input type="radio" id="radio_<?php echo $count ?>_2" name="question_<?php echo $count ?>" value="2">
+                                        <label for="radio_<?php echo $count ?>_2"><?php echo $question['choice2'] ?></label>
+                                    </div>
+                                    <div class="button">
+                                        <input type="radio" id="radio_<?php echo $count ?>_3" name="question_<?php echo $count ?>" value="3">
+                                        <label for="radio_<?php echo $count ?>_3"><?php echo $question['choice3'] ?></label>
+                                    </div>
+                                    <div class="button">
+                                        <input type="radio" id="radio_<?php echo $count ?>_4" name="question_<?php echo $count ?>" value="4">
+                                        <label for="radio_<?php echo $count ?>_4"><?php echo $question['choice4'] ?></label>
                                     </div>
                                 </div>
                             </div>

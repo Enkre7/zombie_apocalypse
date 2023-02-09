@@ -1,3 +1,7 @@
+html {
+    cursor: url(./src/biohazard.svg), auto;
+}
+
 @media(prefers-color-scheme: dark) {
 
     body {
@@ -36,7 +40,7 @@
     .card {
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     }
-    
+
     .validate {
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     }
@@ -45,6 +49,18 @@
         background: #E9ECEF;
     }
 
+}
+
+@media (max-width: 830px) {
+    .card {
+        zoom: 75%;
+    }
+}
+
+@media (max-width: 630px) {
+    .card {
+        zoom: 55%;
+    }
 }
 
 .validate {
@@ -80,7 +96,7 @@
 }
 
 .button input[type="radio"]+label {
-    border:  #A4B494 0.8px solid;
+    border: #A4B494 0.8px solid;
     border-radius: 9px;
 }
 
@@ -94,4 +110,3 @@
     padding-left: 9px;
     padding-right: 9px;
 }
-
