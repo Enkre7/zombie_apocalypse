@@ -1,7 +1,14 @@
 # zombie_apocalypse
 
-### Le site est responsive, de plus il possède un mode sombre et clair.
+## Le site est un test de personnalité sur le thème de la survie dans un monde post-apocalypse zombie.
  
 ### Etapes réalisées pour créer le site:
-1 - 
-2 - 
+- Création des requêtes POST
+- Parsing fichier de question en JSON
+- Création CSS
+- Génération de cartes de question dynamiques
+- Message résultat customisé en fonction du nombre de réponses différentes
+- Curseur customisé effet d'ombre
+- Mode sombre et clair
+
+#### Le site est responsive, de plus il possède un mode sombre et clair.
