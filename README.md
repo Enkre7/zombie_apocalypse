@@ -10,5 +10,6 @@
 - Message résultat customisé en fonction du nombre de réponses différentes
 - Curseur customisé effet d'ombre
 - Mode sombre et clair
+- Message résultat customisé lors de réponses 50% d'un type / 50% d'un autre type
 
 #### Le site est responsive, de plus il possède un mode sombre et clair.
