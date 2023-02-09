@@ -16,7 +16,11 @@
     .btn:hover {
         color: #343434;
     }
-    
+
+    .button input[type="radio"]:checked+label {
+        background: #202124;
+    }
+
 }
 
 @media(prefers-color-scheme: light) {
@@ -25,13 +29,25 @@
         color: #0c5d1f;
     }
 
+    .jumbotron {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
     .card {
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     }
     
+    .validate {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .button input[type="radio"]:checked+label {
+        background: #E9ECEF;
+    }
+
 }
 
-.btn {
+.validate {
     border-radius: 7px;
     font-size: 60px;
     border-top: none;
@@ -41,9 +57,9 @@
 .card {
     border-color: #A4B494;
     border-radius: 15px;
-    width: 100%;
     margin-top: 7px;
     margin-bottom: 7px;
+    width: 50rem;
 }
 
 .nav-buttons {
@@ -58,3 +74,24 @@
     margin-left: 150px;
     margin-right: 150px;
 }
+
+.button input[type="radio"] {
+    display: none;
+}
+
+.button input[type="radio"]+label {
+    border:  #A4B494 0.8px solid;
+    border-radius: 9px;
+}
+
+.button input[type="radio"]:checked+label {
+    margin-left: 20px;
+}
+
+.button label {
+    cursor: pointer;
+    line-height: 1.8em;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
